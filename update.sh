@@ -3,8 +3,8 @@
 #Upload arduino romeo sketch
 echo "Uploading romeo sketch"
 if [ -f /dev/ttyACM1 ] ; then 
-    arduino-cli compile arduino-rov-romeo-controller.ino || { echo "Failed to compile romeo sketch" ; exit 1; }
-    arduino-cli upload -p /dev/ttyACM1 -b arduino:avr:uno arduino-rov-romeo-controller.ino || { echo "Failed to upload romeo sketch" ; exit 1; }
+    arduino-cli compile romeo-controller/romeo-controller.ino || { echo "Failed to compile romeo sketch" ; exit 1; }
+    arduino-cli upload -p /dev/ttyACM1 -b arduino:avr:uno romeo-controller/romeo-controller.ino || { echo "Failed to upload romeo sketch" ; exit 1; }
 else
   echo "Failed to upload romeo sketch device missing"   
   exit 1
